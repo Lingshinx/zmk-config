@@ -34,11 +34,11 @@
     };
 
     macros {
-        del_to_begin: m1 {
+        del_to_begin: del_to_begin {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LS(HOME) &kp DELETE>;
-            label = "M1";
+            label = "DEL_TO_BEGIN";
         };
 
         del_to_end: del_to_end {
