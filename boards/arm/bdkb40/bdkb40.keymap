@@ -5,10 +5,10 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 
-#define WORK    0
-#define ORBIT   1
-#define NEBULA  2
-#define HORIZON 3
+#define NORM     0
+#define NUMERIC  1
+#define EMACS    2
+#define FUNC     3
 
 &lt {
     flavor = "hold-preferred";
@@ -52,8 +52,8 @@
     keymap {
         compatible = "zmk,keymap";
 
-        WORK {
-            display-name = "Work Layer";
+        NORM {
+            display-name = "normal";
 
             // ------------------------------------------------------------------------------------------------------------
             // | ESC |  Q  |  W  |  E  |  R  |  T  |  Y  |  U  |  I  |  O  |  P  |BSPC |
@@ -63,14 +63,14 @@
 
             bindings = <
                 &kp ESC             &kp Q     &kp W      &kp E      &kp R       &kp T      &kp Y      &kp U  &kp I      &kp O    &kp P     &kp BSLH
-                &lt_rpt NEBULA TAB  &kp A     &kp S      &kp D      &kp F       &kp G      &kp H      &kp J  &kp K      &kp L    &lt_rpt HORIZON ENTER
+                &lt_rpt EMACS TAB   &kp A     &kp S      &kp D      &kp F       &kp G      &kp H      &kp J  &kp K      &kp L    &lt_rpt FUNC ENTER
                 &kp LSHIFT          &kp Z     &kp X      &kp C      &kp V       &kp B      &kp N      &kp M  &kp COMMA  &kp DOT  &kp RSHIFT
-                &kp LCTRL           &kp LALT  &kp LMETA  &kp SPACE  &lt_rpt ORBIT SPACE   &kp RCTRL  &kp RMETA  &kp RALT
+                &kp LCTRL           &kp LALT  &kp LMETA  &kp SPACE  &lt_rpt NUMERIC SPACE  &kp RCTRL  &kp RMETA         &kp RALT
             >;
         };
 
-        ORBIT {
-            display-name = "ORBIT";
+        NUMERIC {
+            display-name = "numeric";
 
             // ------------------------------------------------------------------------------------------------------------
             // | ESC |  Q  |  W  |  E  |  R  |  T  |  Y  |  U  |  I  |  O  |  P  |BSPC |
@@ -86,8 +86,8 @@
             >;
         };
 
-        NEBULA {
-            display-name = "NEBULA";
+        EMACS {
+            display-name = "emacs-like";
 
             bindings = <
                 &trans  &trans    &trans  &kp END         &trans          &trans          &trans          &trans           &kp MINUS  &kp EQUAL     &kp UP    &trans
@@ -97,8 +97,8 @@
             >;
         };
 
-        HORIZON {
-            display-name = "HORIZON";
+        FUNC {
+            display-name = "function keys";
 
             bindings = <
                 &trans  &kp F1          &kp F2      &kp F3  &kp F4       &kp F5        &kp F6           &kp F7      &kp F8     &kp F9     &kp F10  &trans
