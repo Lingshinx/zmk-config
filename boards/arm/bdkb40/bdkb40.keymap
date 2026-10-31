@@ -9,6 +9,7 @@
 #define NUMERIC  1
 #define EMACS    2
 #define FUNC     3
+#define WIN      4
 
 &lt {
     flavor = "hold-preferred";
@@ -62,10 +63,10 @@
             // |  CTRL |LMETA|  ALT  |   SPACE   |     SPACE     | Raise |RMETA|  CTRL |
 
             bindings = <
-                &kp ESC             &kp Q     &kp W      &kp E      &kp R       &kp T      &kp Y      &kp U  &kp I      &kp O    &kp P     &kp BSLH
-                &lt_rpt EMACS TAB   &kp A     &kp S      &kp D      &kp F       &kp G      &kp H      &kp J  &kp K      &kp L    &lt_rpt FUNC ENTER
-                &kp LSHIFT          &kp Z     &kp X      &kp C      &kp V       &kp B      &kp N      &kp M  &kp COMMA  &kp DOT  &kp RSHIFT
-                &kp LCTRL           &kp LALT  &kp LMETA  &kp SPACE  &lt_rpt NUMERIC SPACE  &kp RCTRL  &kp RMETA         &kp RALT
+                &kp ESC             &kp Q      &kp W      &kp E      &kp R       &kp T      &kp Y      &kp U  &kp I      &kp O    &kp P     &kp BSLH
+                &lt_rpt EMACS TAB   &kp A      &kp S      &kp D      &kp F       &kp G      &kp H      &kp J  &kp K      &kp L    &lt_rpt FUNC ENTER
+                &kp LSHIFT          &kp Z      &kp X      &kp C      &kp V       &kp B      &kp N      &kp M  &kp COMMA  &kp DOT  &kp RSHIFT
+                &kp LCTRL           &kp LMETA  &mo WIN    &kp SPACE  &lt_rpt NUMERIC SPACE  &kp RCTRL  &kp LALT          &kp RALT
             >;
         };
 
@@ -105,6 +106,17 @@
                 &trans  &del_to_begin   &trans      &trans  &del_to_end     &kp C_PREV    &kp C_PP         &kp C_NEXT  &kp F11    &kp F12    &trans
                 &trans  &trans          &trans      &trans  &trans          &kp C_VOL_DN  &kp C_VOLUME_UP  &kp K_MUTE  &kp PG_DN  &kp PG_UP  &kp INSERT
                 &trans  &sys_reset      &trans      &trans  &studio_unlock  &trans        &kp BSPC         &kp DEL
+            >;
+        };
+
+        WIN {
+            display-name = "WIN";
+
+            bindings = <
+                &kp LMETA   &kp LA(F4) &trans        &trans &trans  &kp LG(LC(LA(LS(T)))) &trans           &trans &kp LG(TAB) &trans            &trans &trans
+                &kp LA(TAB) &trans     &kp LG(LS(S)) &trans &kp F11 &trans                &kp LG(LC(LEFT)) &trans &trans      &kp LG(LC(RIGHT)) &trans
+                &trans      &trans     &trans        &trans &trans  &pk LG(LC(LA(LS(B)))) &trans           &trans &trans      &trans            &trans
+                &trans      &trans     &trans        &trans &kp LG(LC(LA(LS(SPACE))))                             &trans      &trans            &trans
             >;
         };
     };
